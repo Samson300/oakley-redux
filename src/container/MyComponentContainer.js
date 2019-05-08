@@ -3,12 +3,14 @@ import MyComponent from '../components/MyComponent';
 import {
     setActivityEat,
     setActivityNap,
-    setActivityPlay
+    setActivityPlay,
+    setName
 } from "../actions-reducer";
 
 const mapStateToProps = state => {
     return {
-        activity: state.activity
+        activity: state.activity,
+        name: state.name
     };
 };
 
@@ -22,6 +24,9 @@ const mapDispatchToProps = dispatch => {
         },
         handleClickPlay: () => {
             dispatch(setActivityPlay());
+        },
+        setName: (Name) => {
+            dispatch(setName(Name));
         }
     };
 }
